@@ -21,20 +21,122 @@ const displayDaysPerMonth = (year) =>{
     }
   })
 
-  //返回一年中的每月显示数据,每月显示数据是6行7天
+  //返回一年中的每月显示数据,每月显示数据是6行*7天
+  return new Array(12).fill([]).map((month,monthIndex)=>{
+    let addDays = addDaysFromPreMonth[monthIndex];
+    let daysCount = daysInMonth[monthIndex];
+    let daysCountPrevious = daysInpreviousMonth[monthIndex];
+    let monthData = [];
+    //补足上月天数
+    for(;addDays>0;addDays--){
+      monthData.unshift(daysCountPrevious--)
+    }
+    //填入本月
+    for(let i = 0;i<daysCount;){
+      monthData.push(++i)
+    }
+
+    //补足下个月
+    for(let i = 42 - monthData.length,j=0;j<i;){
+      monthData.push(++j)
+    }
+    return monthData
+  })
   
 }
 
 
-class App extends Component {
+class Calendar extends Component {
+  constructor(props){
+      super(props)
+      let now = new Date()
+      this.state = {
+        year:now.getFullYear(),
+        month:now.getMonth(),
+        day:now.getDate(),
+        picked:false
+      }
+  }
+
+  nextMonth = ()=>{
+    if(this.state.month === 11){
+      this.setState({
+        year:(++this.state.year),
+        month:0
+      })
+    }else{
+      this.setState({
+        month:++this.state.month
+      })
+    }
+  }
+  prevMonth = ()=>{
+    if(this.state.month === 0){
+      this.setState({
+        year:--this.state.year,
+        month:11
+      })
+    }else{
+      this.setState({
+        month:--this.state.month
+      })
+    }
+  }
+
+  datePick = (day)=>{
+    this.setState({day})
+  }
+
+  datePickerToggle = ()=>{
+    this.refs.main.style.height = this.refs.main.style.height==='460px'?'0px':'460px'
+  }
+
+  picked = ()=>{
+    this.state.picked = false
+  }
 
   render() {
+    let props = {
+      viewData:displayDaysPerMonth(this.state.year),
+      datePicked:`${this.state.year}年
+                  ${this.state.month+1}月
+                  ${this.state.day}日
+                `
+    }
+
     return (
       <div className="output">
-        fgjfhj
+        <div className="star1"></div>
+        <div className="star2"></div>
+        <div className="star3"></div>
+        <p className="datePicked" onClick={this.datePickerToggle}>
+          {props.datePicked}
+        </p>
+        <div className="main" ref="main">
+          <CalendarHeader
+              prevMonth={this.prevMonth}
+              nextMonth={this.nextMonth}
+              year={this.state.year}
+              month={this.state.month}
+              day={this.state.day}
+          />
+          <CalendarMain
+              {...props}
+              prevMonth={this.prevMonth}
+              nextMonth={this.nextMonth}
+              datePick={this.datePick}
+              year={this.state.year}
+              month={this.state.month}
+              day={this.state.day}
+          />
+          <CalendarFooter
+            picked={this.picked}
+            datePickerToggle={this.datePickerToggle}
+          />
+        </div>
       </div>
     );
   }
 }
 
-export default App;
+export default Calendar;

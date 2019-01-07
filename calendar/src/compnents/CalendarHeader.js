@@ -4,14 +4,15 @@ export default class CalendarHeader extends Component {
     render() {
         return (
             <div className="calendarHeader">
-                <span className="prev">
+                <span className="prev" onClick={this.props.prevMonth}>
                     《
                 </span>
-                <span class="next">
-                    》
-                </span>
+               
                 <span className="dateInfo">
-                    {}年{}月
+                    {this.props.year}年{this.props.month +1}月
+                </span>
+                <span className="next" onClick={this.props.nextMonth}>
+                    》
                 </span>
             </div>
         )
