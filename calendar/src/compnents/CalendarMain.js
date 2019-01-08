@@ -6,13 +6,15 @@ export default class CalendarMain extends Component {
       case 'thisMonth':
         let month = this.props.viewData[this.props.month]
         this.props.datePick(month[index])
-        break
+        break;
       case 'prevMonth':
         this.props.prevMonth()
-        break
+        break;
       case 'nextMonth':
         this.props.nextMonth()
-        break
+        break;
+      default:
+           
     }
   }
 
@@ -24,7 +26,7 @@ export default class CalendarMain extends Component {
         previousEl.style = ''
       }
       if(event.target.className === 'thisMonth'){
-        event.target.style = 'background:#F8F8F8;color:#000'
+        event.target.style = 'background:rgba(255,255,255,0.5);color:#fff;border-radius:50%;'
         previousEl = event.target
       }
     }
@@ -58,13 +60,13 @@ export default class CalendarMain extends Component {
       <table className="calendarMain">
         <thead>
             <tr>
-                <th>日</th>
                 <th>一</th>
                 <th>二</th>
                 <th>三</th>
                 <th>四</th>
                 <th>五</th>
                 <th>六</th>
+                <th>日</th>
             </tr>
         </thead>
         <tbody>

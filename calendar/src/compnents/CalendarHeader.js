@@ -9,7 +9,7 @@ export default class CalendarHeader extends Component {
                 </span>
                
                 <span className="dateInfo">
-                    {this.props.year}年{this.props.month +1}月
+                    {this.props.year} &nbsp;  年  &nbsp;  {this.props.month + 1}  &nbsp; 月
                 </span>
                 <span className="next" onClick={this.props.nextMonth}>
                     》

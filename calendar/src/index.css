@@ -13,4 +13,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
+.output{width: 300px;color: #fff;background: #000;}
+.datePicked{text-align: center;}
+.calendarHeader{display: flex;justify-content: space-around}
+.calendarMain{margin: 0 auto;margin-top: 15px;}
+.calendarMain th,td{padding: 5px 10px;cursor: pointer;}

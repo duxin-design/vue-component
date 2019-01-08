@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import CalendarHeader from './compnents/CalendarHeader';
 import CalendarMain from  './compnents/CalendarMain';
-import CalendarFooter from './compnents/CalendarFooter';
 
 const displayDaysPerMonth = (year) =>{
   let daysInMonth = [31,28,31,30,31,30,31,31,30,31,30,31];
@@ -56,29 +55,34 @@ class Calendar extends Component {
         day:now.getDate(),
         picked:false
       }
-  }
-
+  };
+ 
   nextMonth = ()=>{
     if(this.state.month === 11){
+      let year = this.state.year;
       this.setState({
-        year:(++this.state.year),
+        year: ++year,
         month:0
       })
     }else{
+      let month = this.state.month
       this.setState({
-        month:++this.state.month
+        
+        month: ++month
       })
     }
   }
   prevMonth = ()=>{
     if(this.state.month === 0){
+      let year = this.state.year;
       this.setState({
-        year:--this.state.year,
+        year:--year,
         month:11
       })
     }else{
+      let month = this.state.month
       this.setState({
-        month:--this.state.month
+        month: --month
       })
     }
   }
@@ -92,7 +96,8 @@ class Calendar extends Component {
   }
 
   picked = ()=>{
-    this.state.picked = false
+    // let picked = this.state.picked
+    // picked = false
   }
 
   render() {
@@ -129,10 +134,7 @@ class Calendar extends Component {
               month={this.state.month}
               day={this.state.day}
           />
-          <CalendarFooter
-            picked={this.picked}
-            datePickerToggle={this.datePickerToggle}
-          />
+          
         </div>
       </div>
     );
