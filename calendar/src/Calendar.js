@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import CalendarHeader from './compnents/CalendarHeader';
 import CalendarMain from  './compnents/CalendarMain';
-
 const displayDaysPerMonth = (year) =>{
   let daysInMonth = [31,28,31,30,31,30,31,31,30,31,30,31];
   if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
@@ -134,7 +133,6 @@ class Calendar extends Component {
               month={this.state.month}
               day={this.state.day}
           />
-          
         </div>
       </div>
     );
