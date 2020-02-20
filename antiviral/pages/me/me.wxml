@@ -1,0 +1,4 @@
+<view class="record" bindtap="record">
+    <text>预约记录</text>
+    <image src="{{rightImg}}"></image>
+</view>

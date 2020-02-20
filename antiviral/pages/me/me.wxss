@@ -1,0 +1,22 @@
+/**index.wxss**/
+
+page {
+  background: #e6e3e4;
+}
+
+.record {
+  width: 650rpx;
+  margin: 100rpx auto;
+  padding: 20rpx;
+  background: #fff;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+}
+
+image {
+  width: 18rpx;
+  height: 33rpx;
+}

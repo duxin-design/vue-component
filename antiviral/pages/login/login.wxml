@@ -1,0 +1,4 @@
+<!--pages/login/login.wxml-->
+
+<image src="{{img}}"></image>
+ <button open-type="getUserInfo" bindgetuserinfo="getUserInfo">登录</button>

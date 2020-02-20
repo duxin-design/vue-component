@@ -1,0 +1,58 @@
+/**index.wxss**/
+
+page {
+  background: #e6e3e4;
+}
+
+.userInfo {
+  width: 650rpx;
+  margin: 0 auto;
+  padding: 20rpx;
+  display: flex;
+  background: #fff;
+  border-radius: 5px;
+  margin-top: 100rpx;
+}
+
+.user-info {
+  margin-left: 40rpx;
+  line-height: 28px;
+}
+
+.userinfo-avatar {
+  overflow: hidden;
+  display: block;
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+}
+
+.user-info {
+  font-size: 16px;
+}
+
+.login {
+  width: 650rpx;
+  padding: 20rpx;
+  background: #fff;
+  border-radius: 5px;
+  margin: 100px auto;
+  text-align: center;
+  line-height: 80rpx;
+}
+
+button {
+  color: #000;
+  background-color: #fff;
+  border: node;
+  position: inherit;
+}
+
+.loginShow {
+  display: flex;
+}
+
+.loginHide {
+  display: none;
+  font-size: 18px;
+}

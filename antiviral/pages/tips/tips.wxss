@@ -1,0 +1,30 @@
+/* pages/tips/tips.wxss */
+
+page {
+  background: #e6e3e4;
+}
+
+.tips {
+  width: 650rpx;
+  margin: 0 auto;
+  padding: 20rpx;
+  font-size: 16px;
+  text-align: justify;
+}
+
+.bottom-radio {
+  width: 650rpx;
+  margin: 0 auto;
+  font-size: 16px;
+  margin-top: 140rpx;
+}
+
+.radio {
+  margin: 0 auto;
+}
+
+button {
+  margin-top: 50rpx;
+  background: #4eb7c2;
+  color: #fff;
+}

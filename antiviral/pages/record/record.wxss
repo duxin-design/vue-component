@@ -1,0 +1,30 @@
+/* pages/record/record.wxss */
+
+page {
+  background: #e6e3e4;
+}
+
+.record {
+  width: 650rpx;
+  padding: 20rpx;
+  background: #fff;
+  margin: 35rpx auto;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.record-time {
+  border-bottom: 1px dashed #e6e3e4;
+  padding-bottom: 15rpx;
+}
+
+.record-info {
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  line-height: 55rpx;
+}
+
+.record-qr {
+  text-align: center;
+  color: #4eb7c2;
+}

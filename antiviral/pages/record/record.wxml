@@ -1,0 +1,15 @@
+
+
+<block wx:for="{{ordersList}}" wx:key="index">
+  <view class="record">
+    <view class="record-time">预约时间：{{item.createTime}}</view>
+    <view class="record-info">
+      <view class="community">小区名：{{item.user.address}}</view>
+      <view>申请人：{{item.user.username}}</view>
+      <view>身份证号：{{item.user.identity}}</view>
+      <view>预约数量：5个</view>
+      <view>预约编号：{{item.orderId}}</view>
+    </view>
+    <view class="record-qr" bindtap="qrcode" data-qr="{{item.qrpath}}" data-orderId="{{item.orderId}}">展开预约二维码</view>
+  </view>
+</block>
