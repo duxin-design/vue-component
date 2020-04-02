@@ -1,5 +1,0 @@
-<!--pages/qr/qrcode.wxml-->
-<view class="qr-info">
-<image src="{{qrcode}}"></image>
-<view class="record-num">预约编号：{{id}}</view>
-</view>
