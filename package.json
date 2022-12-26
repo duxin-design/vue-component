@@ -11,12 +11,13 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "element-plus": "^2.2.27",
     "pinia": "^2.0.26",
     "vue": "^3.2.45"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.1.4",
-    "@types/node": "^18.11.9",
+    "@types/node": "^18.11.17",
     "@vitejs/plugin-vue": "^3.2.0",
     "@vitejs/plugin-vue-jsx": "^2.1.1",
     "@vue/eslint-config-prettier": "^7.0.0",

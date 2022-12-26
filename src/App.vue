@@ -1,8 +1,3 @@
-<script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
   <header>
     <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
@@ -16,7 +11,11 @@ import TheWelcome from './components/TheWelcome.vue'
     <TheWelcome />
   </main>
 </template>
-
+<script  lang="ts">
+export default {
+  name: "App"
+}
+</script>
 <style scoped>
 header {
   line-height: 1.5;
@@ -31,7 +30,6 @@ header {
 @media (min-width: 1024px) {
   header {
     display: flex;
-    /* place-items: center; */
     align-items: center;
     padding-right: calc(var(--section-gap) / 2);
   }
