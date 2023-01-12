@@ -1,14 +1,20 @@
 <template>
-  <div>姓名：{{ data }}</div>
+ <router-view />
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import { ElConfigProvider } from 'element-plus';
 
 export default defineComponent({
-  inject: ["data"],
-  created() {
-    console.log(this.data)
+  name: "app",
+  components: {
+    [ElConfigProvider.name]: ElConfigProvider
+  },
+  computed: {
+    currentLocale() {
+      return
+    }
   }
 })
 </script>

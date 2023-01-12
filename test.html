@@ -13,8 +13,6 @@
     <script>
         const bucket = new Set();
         const data = { name: 'duxin' };
-
-
         const obj = new Proxy(data, {
             // 拦截读取操作
             get(target, key) {
