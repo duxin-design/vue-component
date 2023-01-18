@@ -10,11 +10,11 @@ import {
     onBeforeUnmount
 } from "vue";
 import { useRouter } from "vue-router";
-import Motion from "./utils/motion"
+import Motion from "./utils/motion";
+import avatar from "@/assets/avatar.svg";
 
 const router = useRouter();
 const loading = ref(false);
-const checked = ref(false);
 const ruleFormRef = ref<FormInstance>();
 
 const ruleForm = reactive({
@@ -30,7 +30,7 @@ const onLogin = async (formEl: FormInstance | undefined) => {
     await formEl.validate((valid, fields) => {
         console.log("登录", formEl)
         if (valid) {
-            
+            loading.value = false;
         } else {
             loading.value = false;
             return fields;
@@ -53,35 +53,58 @@ onBeforeUnmount(() => {
 </script>
 <template>
     <div class="login-box">
-        <el-form ref="ruleFormRef" :model="ruleForm" :rules="loginRules">
-            <Motion>
-                <el-form-item :rules="[{
-                    required: true,
-                    message: '请输入用户名'
-                }]" prop="username">
-                    <el-input clearable v-model="ruleForm.username" :placeholder="'用户名'" />
-                </el-form-item>
-            </Motion>
-            <Motion :delay="200">
-                <el-form-item :rules="[{
-                    required: true,
-                    message: '请输入密码'
-                }]" prop="password">
-                    <el-input clearable show-password v-model="ruleForm.password" :placeholder="'密码'" />
-                </el-form-item>
-            </Motion>
-            <Motion :delay="200">
-                <el-form-item>
-                    <el-button class="w-full mt-4" size="default" type="primary" :loading="loading"
-                        @click="onLogin(ruleFormRef)">
-                        登录
-                    </el-button>
-                </el-form-item>
-            </Motion>
-        </el-form>
+        <div class="login-form">
+            <img :src="avatar" alt="" class="logo">
+            <el-form ref="ruleFormRef" :model="ruleForm" :rules="loginRules" size="large">
+                <Motion>
+                    <el-form-item :rules="[{
+                        required: true,
+                        message: '请输入用户名'
+                    }]" prop="username">
+                        <el-input clearable v-model="ruleForm.username" :placeholder="'用户名'" />
+                    </el-form-item>
+                </Motion>
+                <Motion :delay="200">
+                    <el-form-item :rules="[{
+                        required: true,
+                        message: '请输入密码'
+                    }]" prop="password">
+                        <el-input clearable show-password v-model="ruleForm.password" :placeholder="'密码'" />
+                    </el-form-item>
+                </Motion>
+                <Motion :delay="200">
+                    <el-form-item>
+                        <el-button class="w-full" size="default" type="primary" :loading="loading"
+                            @click="onLogin(ruleFormRef)">
+                            登录
+                        </el-button>
+                    </el-form-item>
+                </Motion>
+            </el-form>
+        </div>
+
     </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+.login-box {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    place-content: center;
+    place-items: center;
 
+    .login-form {
+        width: 360px;
+
+        .logo {
+            display: inherit;
+            margin: 20px auto;
+        }
+
+        .w-full {
+            width: 100%;
+        }
+    }
+}
 </style>
