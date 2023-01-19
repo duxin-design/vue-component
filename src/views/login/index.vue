@@ -7,7 +7,7 @@ import {
     watch,
     computed,
     onMounted,
-    onBeforeUnmount
+    onBeforeUnmount,
 } from "vue";
 import { useRouter } from "vue-router";
 import Motion from "./utils/motion";
@@ -103,10 +103,6 @@ onBeforeUnmount(() => {
         .logo {
             display: inherit;
             margin: 20px auto;
-        }
-
-        .w-full {
-            width: 100%;
         }
     }
 }

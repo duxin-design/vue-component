@@ -5,6 +5,9 @@ import "./assets/main.css";
 import router from "./router";
 import store from "./store";
 
+import "./style/tailwind.css";
+import "element-plus/dist/index.css";
+
 const app = createApp(App);
 app.use(router);
 app.use(store);
