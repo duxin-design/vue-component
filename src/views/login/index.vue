@@ -12,24 +12,25 @@ import {
 import { useRouter } from "vue-router";
 import Motion from "./utils/motion";
 import avatar from "@/assets/avatar.svg";
+import { useStore } from "vuex";
 
 const router = useRouter();
 const loading = ref(false);
 const ruleFormRef = ref<FormInstance>();
+const store = useStore();
 
 const ruleForm = reactive({
     username: "admin",
     password: "admin123",
-    verifyCode: ""
 });
 const loginRules = {}
 const onLogin = async (formEl: FormInstance | undefined) => {
     loading.value = true;
     if (!formEl) return;
-
     await formEl.validate((valid, fields) => {
-        console.log("登录", formEl)
         if (valid) {
+            console.log("登录", ruleForm,store)
+            router.push("/")
             loading.value = false;
         } else {
             loading.value = false;
@@ -45,9 +46,11 @@ function onkeypress({ code }: KeyboardEvent) {
 
 onMounted(() => {
     window.document.addEventListener("keypress", onkeypress);
+    console.log("onMounted")
 });
 
 onBeforeUnmount(() => {
+    console.log("onBeforeUnmount")
     window.document.removeEventListener("keypress", onkeypress);
 });
 </script>
