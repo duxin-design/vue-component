@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Login from "../views/login/index.vue";
-import Home from "../views/home/index.vue";
-import NotFind from "../views/notFind/index.vue";
+import Login from "@/views/login/index.vue";
+import Home from "@/views/home/index.vue";
+import NotFind from "@/views/notFind/index.vue";
 
 const routes = [
   { path: "/", redirect: "/home" },
