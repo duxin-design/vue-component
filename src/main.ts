@@ -1,16 +1,11 @@
-import { createApp } from "vue";
-import ElementPlus from "element-plus";
-import App from "./App.vue";
-import "./assets/main.css";
-import router from "./router";
-import store from "./store";
+import { createApp } from 'vue'
+import App from './App.vue'
+import router from './router'
 
-import "./style/tailwind.css";
-import "element-plus/dist/index.css";
+import './assets/main.css'
 
-const app = createApp(App);
-app.use(router);
-await router.isReady();
-app.use(store);
-app.use(ElementPlus);
-app.mount("#app");
+const app = createApp(App)
+
+app.use(router)
+
+app.mount('#app')
