@@ -33,6 +33,11 @@ const mainRouterList = [{
             title: "水印",
             name: "WaterMark",
             path: "/able/watermark"
+        },
+        {
+            title: "打印",
+            name: "print",
+            path: "/able/print"
         }
     ]
 }]

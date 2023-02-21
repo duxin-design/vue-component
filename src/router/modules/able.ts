@@ -2,7 +2,7 @@
  * @Author: duxinyues yongyuan253015@gmail.com
  * @Date: 2023-02-21 16:05:34
  * @LastEditors: duxinyues yongyuan253015@gmail.com
- * @LastEditTime: 2023-02-21 16:17:08
+ * @LastEditTime: 2023-02-21 17:10:03
  * @FilePath: \vue-admin\src\router\modules\able.ts
  * @Description: 
  * Copyright (c) 2023 by ${duxinyues} email: ${yongyuan253015@gmail.com}, All Rights Reserved.
@@ -26,14 +26,14 @@ export default {
         title: "水印"
       }
     },
-    // {
-    //   path: "/able/print",
-    //   name: "Print",
-    //   component: () => import("@/views/able/print.vue"),
-    //   meta: {
-    //     title: $t("menus.hsPrint")
-    //   }
-    // },
+    {
+      path: "/able/print",
+      name: "Print",
+      component: () => import("@/views/able/print.vue"),
+      meta: {
+        title: "打印"
+      }
+    },
     // {
     //   path: "/able/download",
     //   name: "Download",
