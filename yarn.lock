@@ -333,7 +333,21 @@
   "resolved" "https://registry.npmmirror.com/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz"
   "version" "1.2.1"
 
-"@iconify/types@^2.0.0":
+"@iconify-icons/ep@^1.2.10":
+  "integrity" "sha512-slLhiMM5snJi+Mbzj02UPkK1Ym5SK9U4l1CSbA5V6YGjzL1Pk60fGPB6b7Js3jObftONWji6bpJKFjOGYyPk/g=="
+  "resolved" "https://registry.npmmirror.com/@iconify-icons/ep/-/ep-1.2.10.tgz"
+  "version" "1.2.10"
+  dependencies:
+    "@iconify/types" "*"
+
+"@iconify-icons/ri@^1.2.4":
+  "integrity" "sha512-hTYFsUMEYU62Eu8YEtNPvGRusvUXQPs3kT+Vvl6VJc9TwfX+W8SNo4eL7e35QeNZh2JWAwG6cYCoWFQQSFpFHg=="
+  "resolved" "https://registry.npmmirror.com/@iconify-icons/ri/-/ri-1.2.4.tgz"
+  "version" "1.2.4"
+  dependencies:
+    "@iconify/types" "*"
+
+"@iconify/types@*", "@iconify/types@^2.0.0":
   "integrity" "sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg=="
   "resolved" "https://registry.npmmirror.com/@iconify/types/-/types-2.0.0.tgz"
   "version" "2.0.0"

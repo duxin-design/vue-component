@@ -2,7 +2,7 @@
  * @Author: duxinyues yongyuan253015@gmail.com
  * @Date: 2023-02-20 11:53:45
  * @LastEditors: duxinyues yongyuan253015@gmail.com
- * @LastEditTime: 2023-02-20 21:24:17
+ * @LastEditTime: 2023-02-21 15:31:30
  * @FilePath: \vue-admin\src\main.ts
  * @Description:
  * Copyright (c) 2023 by ${duxinyues} email: ${yongyuan253015@gmail.com}, All Rights Reserved.
@@ -19,7 +19,6 @@ import { getServerConfig } from "./config";
 import { injectResponsiveStorage } from "@/uitls/responsive";
 const app = createApp(App);
 getServerConfig(app).then(async (config) => {
-    console.log("config",config)
   app.use(router);
   await router.isReady();
   injectResponsiveStorage(app,config)
